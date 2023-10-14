@@ -57,6 +57,7 @@
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
+	max-width: 65rem;
 }
 
 .stocks .weekBtns button {
@@ -72,4 +73,10 @@
 
 .stocks .weekBtns button:hover {
 	transform: scale(1.05);
+}
+
+@media screen and (max-width: 780px) {
+	.stocks .heading {
+		font-size: 1.75rem;
+	}
 }

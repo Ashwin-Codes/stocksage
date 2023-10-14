@@ -40,7 +40,7 @@ export default function StockTable() {
 
 	return (
 		<div className="stocks">
-			<h1>Week chart of {stocks[0].symbol}</h1>
+			<h1 className="heading">Week chart of {stocks[0].symbol}</h1>
 			<div className="stockTable">
 				<div className="tableHeadings">
 					<h1 className="date">Date</h1>

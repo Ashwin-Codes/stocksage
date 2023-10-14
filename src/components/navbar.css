@@ -21,10 +21,31 @@
 	gap: 1rem;
 }
 
+.navbar .center .menu {
+	display: none;
+	align-self: center;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
 .navbar .center .navlinks .link {
 	cursor: pointer;
 }
 
 .navbar .center .navlinks .loginbtn {
 	color: var(--login-btn);
+}
+
+@media screen and (max-width: 780px) {
+	.navbar .center .navlinks {
+		display: none;
+	}
+
+	.navbar .center .menu {
+		display: unset;
+	}
+
+	.navbar .center {
+		width: 90%;
+	}
 }
