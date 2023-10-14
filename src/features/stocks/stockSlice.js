@@ -33,4 +33,17 @@ const stockSlice = createSlice({
 	},
 })
 
+// useSelector callbacks
+export function getAllStocks(state) {
+	return state.stocks.stocks.data
+}
+
+export function getStocksState(state) {
+	return state.stocks.state
+}
+
+export function getStocksError(state) {
+	return state.stocks.stocks.data
+}
+
 export default stockSlice.reducer

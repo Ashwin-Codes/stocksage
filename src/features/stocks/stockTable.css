@@ -1,0 +1,63 @@
+.stocks {
+	margin-top: 2rem;
+	color: var(--faded-white);
+}
+
+.stockTable {
+	margin-top: 2rem;
+	display: flex;
+	gap: 2rem;
+}
+
+.stockTable .table {
+	overflow-x: auto;
+	display: flex;
+	gap: 2rem;
+}
+
+.tableHeadings .date {
+	font-size: 1.25rem;
+}
+
+.tableHeadings .listingTitles {
+	margin-top: 1rem;
+	font-size: 1.25rem;
+}
+
+.singleDayData {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-width: 7rem;
+}
+
+.singleDayData .prices {
+	margin-top: 1rem;
+	font-size: 1.25rem;
+}
+
+.singleDayData .date {
+	font-size: 1.25rem;
+	white-space: nowrap;
+}
+
+.stocks .weekBtns {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.stocks .weekBtns button {
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+	background-color: var(--btn-bg);
+	color: var(--faded-white);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all linear 50ms;
+}
+
+.stocks .weekBtns button:hover {
+	transform: scale(1.05);
+}

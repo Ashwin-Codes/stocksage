@@ -8,6 +8,8 @@
 	--navbar: #1a2332;
 	--login-btn: #40a295;
 	--body: #111927;
+	--btn-bg: #1a2332;
+	--faded-white: rgb(221, 221, 221);
 }
 body {
 	height: 100vh;
