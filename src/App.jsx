@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
 import { getStocks } from "./features/stocks/stockSlice"
 import { useEffect } from "react"
+import Navbar from "./components/Navbar"
 export default function App() {
 	const dispatch = useDispatch()
 	useEffect(() => {
@@ -8,5 +9,9 @@ export default function App() {
 		dispatch(getStocks())
 	}, [dispatch])
 
-	return <div>App</div>
+	return (
+		<div>
+			<Navbar />
+		</div>
+	)
 }
