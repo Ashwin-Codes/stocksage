@@ -68,11 +68,15 @@
 	color: var(--faded-white);
 	border: none;
 	border-radius: 10px;
-	cursor: pointer;
 	transition: all linear 50ms;
 }
 
-.stocks .weekBtns button:hover {
+.stocks .weekBtns button:disabled {
+	color: gray;
+}
+
+.stocks .weekBtns button:hover:enabled {
+	cursor: pointer;
 	transform: scale(1.05);
 }
 

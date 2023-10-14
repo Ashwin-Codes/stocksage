@@ -7,6 +7,7 @@ import SingleDayData from "./SingleDayData"
 export default function StockTable() {
 	const stocks = useSelector(getAllStocks)
 	const [currentWeek, setCurrentWeek] = useState(0)
+	const maxPossibleWeek = parseInt(stocks.length / 7 - 1)
 	const daysToShow = 7 // Total days of data to present
 	const [stocksToShow, setStocksToShow] = useState(null)
 
@@ -21,7 +22,6 @@ export default function StockTable() {
 
 	function prevWeek() {
 		setCurrentWeek((currentWeek) => {
-			const maxPossibleWeek = parseInt(stocks.length / 7 - 1)
 			if (currentWeek + 1 > maxPossibleWeek) {
 				return maxPossibleWeek
 			}
@@ -66,8 +66,12 @@ export default function StockTable() {
 				</div>
 			</div>
 			<div className="weekBtns">
-				<button onClick={prevWeek}>Prev Week</button>
-				<button onClick={nextWeek}>Next Week</button>
+				<button onClick={prevWeek} disabled={currentWeek === maxPossibleWeek ? true : false}>
+					Prev Week
+				</button>
+				<button onClick={nextWeek} disabled={currentWeek === 0 ? true : false}>
+					Next Week
+				</button>
 			</div>
 		</div>
 	)
