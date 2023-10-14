@@ -4,6 +4,7 @@ import { getStocks, getStocksState } from "./features/stocks/stockSlice"
 import { useEffect } from "react"
 import Navbar from "./components/Navbar"
 import StockTable from "./features/stocks/StockTable"
+import { RiLoader3Fill as Loader } from "react-icons/ri"
 
 export default function App() {
 	const dispatch = useDispatch()
@@ -17,7 +18,11 @@ export default function App() {
 		return (
 			<div>
 				<Navbar />
-				<div className="center">Loading...</div>
+				<div className="center">
+					<div className="loaderWrapper">
+						<Loader className="loader" />
+					</div>
+				</div>
 			</div>
 		)
 	}

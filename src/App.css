@@ -2,3 +2,26 @@
 	margin: 0 auto;
 	width: 80%;
 }
+
+.loaderWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 25rem;
+}
+
+.loader {
+	animation: spin linear 1000ms infinite;
+	font-size: 5rem;
+	color: var(--up);
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
