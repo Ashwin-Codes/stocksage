@@ -10,6 +10,8 @@
 	--body: #111927;
 	--btn-bg: #1a2332;
 	--faded-white: rgb(221, 221, 221);
+	--up: #8bd100;
+	--down: red;
 }
 body {
 	height: 100vh;

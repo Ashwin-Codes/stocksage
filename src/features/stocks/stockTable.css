@@ -36,6 +36,18 @@
 	font-size: 1.25rem;
 }
 
+.singleDayData .prices .up {
+	color: var(--up);
+	display: flex;
+	align-items: center;
+}
+
+.singleDayData .prices .down {
+	color: var(--down);
+	display: flex;
+	align-items: center;
+}
+
 .singleDayData .date {
 	font-size: 1.25rem;
 	white-space: nowrap;

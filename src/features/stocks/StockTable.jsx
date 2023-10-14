@@ -52,13 +52,14 @@ export default function StockTable() {
 
 				<div className="table">
 					{stocksToShow &&
-						stocksToShow.map((stock) => {
+						stocksToShow.map((stock, idx) => {
 							return (
 								<SingleDayData
 									key={stock.date}
 									date={stock.date}
 									open={stock.open}
 									close={stock.close}
+									prevClose={stocks[idx + daysToShow * currentWeek + 1]?.close}
 								/>
 							)
 						})}

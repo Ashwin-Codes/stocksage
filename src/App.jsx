@@ -12,7 +12,16 @@ export default function App() {
 		// Fetch stocks
 		dispatch(getStocks())
 	}, [dispatch])
-	console.log(stockState)
+
+	if (stockState === "pending") {
+		return (
+			<div>
+				<Navbar />
+				<div className="center">Loading...</div>
+			</div>
+		)
+	}
+
 	return (
 		<div>
 			<Navbar />

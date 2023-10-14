@@ -1,13 +1,24 @@
 import getFormatedDate from "../../utils/getFormatedDate"
+import { BiSolidUpArrow as UpIcon } from "react-icons/bi"
+import { BiSolidDownArrow as DownIcon } from "react-icons/bi"
 
-export default function SingleDayData({ date, open, close }) {
+export default function SingleDayData({ date, open, close, prevClose }) {
 	const formatedDate = getFormatedDate(date)
+	const openClassName = open > prevClose ? "up" : open < prevClose ? "down" : null
+	const closeClassName = close > open ? "up" : close < open ? "down" : null
+
 	return (
 		<div className="singleDayData">
 			<h1 className="date">{formatedDate}</h1>
 			<div className="prices">
-				<p>${open}</p>
-				<p>${close}</p>
+				<p className={openClassName}>
+					${open}
+					{openClassName === "up" ? <UpIcon /> : openClassName === "down" ? <DownIcon /> : null}
+				</p>
+				<p className={closeClassName}>
+					${close}
+					{closeClassName === "up" ? <UpIcon /> : closeClassName === "down" ? <DownIcon /> : null}
+				</p>
 			</div>
 		</div>
 	)
