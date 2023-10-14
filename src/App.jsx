@@ -17,6 +17,7 @@ export default function App() {
 		dispatch(getStocks())
 	}, [dispatch])
 
+	// Handles pending UI
 	if (stockState === "pending") {
 		return (
 			<div>
@@ -30,6 +31,7 @@ export default function App() {
 		)
 	}
 
+	// Handles error UI
 	if (stockState === "rejected" && stockError !== null) {
 		return (
 			<div>
@@ -42,6 +44,7 @@ export default function App() {
 		)
 	}
 
+	// Handles stockTable UI
 	return (
 		<div>
 			<Navbar />

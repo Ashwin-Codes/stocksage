@@ -5,12 +5,13 @@ import { useEffect, useState } from "react"
 import SingleDayData from "./SingleDayData"
 
 export default function StockTable() {
-	const stocks = useSelector(getAllStocks)
-	const [currentWeek, setCurrentWeek] = useState(0)
-	const maxPossibleWeek = parseInt(stocks.length / 7 - 1)
-	const daysToShow = 7 // Total days of data to present
-	const [stocksToShow, setStocksToShow] = useState(null)
+	const stocks = useSelector(getAllStocks) // All stocks
+	const [currentWeek, setCurrentWeek] = useState(0) // Keeps track of weeks
+	const maxPossibleWeek = parseInt(stocks.length / 7 - 1) // Calculates max number of weeks from API data
+	const daysToShow = 7 // Total days of data to render once
+	const [stocksToShow, setStocksToShow] = useState(null) // Stores one week of data
 
+	// Fills stocksToShow state with one week of data
 	useEffect(() => {
 		const idx = daysToShow * currentWeek
 		const temp = []
@@ -20,6 +21,7 @@ export default function StockTable() {
 		setStocksToShow(temp)
 	}, [currentWeek, stocks])
 
+	// Handles previous week button click
 	function prevWeek() {
 		setCurrentWeek((currentWeek) => {
 			if (currentWeek + 1 > maxPossibleWeek) {
@@ -29,6 +31,7 @@ export default function StockTable() {
 		})
 	}
 
+	// Handles next week button click
 	function nextWeek() {
 		setCurrentWeek((currentWeek) => {
 			if (currentWeek - 1 < 0) {

@@ -4,6 +4,8 @@ import { BiSolidDownArrow as DownIcon } from "react-icons/bi"
 
 export default function SingleDayData({ date, open, close, prevClose }) {
 	const formatedDate = getFormatedDate(date)
+
+	// Calculates if stock price shoud be green or red
 	const openClassName = open > prevClose ? "up" : open < prevClose ? "down" : null
 	const closeClassName = close > open ? "up" : close < open ? "down" : null
 
