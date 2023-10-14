@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { getAllStocks } from "./stockSlice"
 import { useEffect, useState } from "react"
 import SingleDayData from "./SingleDayData"
+import getYear from "../../utils/getYear"
 
 export default function StockTable() {
 	const stocks = useSelector(getAllStocks) // All stocks
@@ -43,7 +44,10 @@ export default function StockTable() {
 
 	return (
 		<div className="stocks">
-			<h1 className="heading">Week chart of {stocks[0].symbol}</h1>
+			<h1 className="heading">
+				Week chart of <span className="symbol">{stocks[0]?.symbol}</span> in{" "}
+				<span className="year">{getYear(stocks[0]?.date)}</span>
+			</h1>
 			<div className="stockTable">
 				<div className="tableHeadings">
 					<h1 className="date">Date</h1>
@@ -70,7 +74,7 @@ export default function StockTable() {
 			</div>
 			<div className="weekBtns">
 				<button onClick={prevWeek} disabled={currentWeek === maxPossibleWeek ? true : false}>
-					Prev Week
+					Previous Week
 				</button>
 				<button onClick={nextWeek} disabled={currentWeek === 0 ? true : false}>
 					Next Week

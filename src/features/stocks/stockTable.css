@@ -3,6 +3,14 @@
 	color: var(--faded-white);
 }
 
+.stocks .symbol {
+	color: var(--symbol);
+}
+
+.stocks .year {
+	color: var(--year);
+}
+
 .stockTable {
 	margin-top: 2rem;
 	display: flex;
